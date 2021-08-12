@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Button } from '@material-ui/core';
 
 import api from '../../api/api';
-import { FormWrapper } from '../../styles/FormWrapper';
+import FormWrapper from './styles/FormWrapper';
 
 const CreatePinForm = () => {
   const initialValue = {

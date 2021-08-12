@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import ReactMapGL, { NavigationControl, Marker, Popup } from 'react-map-gl';
 import GeoJSON from 'geojson';
 
+import './ParanormalMap.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import api from '../../api/api';
 
@@ -20,8 +21,6 @@ const Map = () => {
   };
 
   const [viewport, setViewport] = useState({
-    height: '500px',
-    width: '50vw',
     latitude: mapCoordinates.sydney.latitude,
     longitude: mapCoordinates.sydney.longitude,
     zoom: 12,
@@ -51,13 +50,15 @@ const Map = () => {
   }, []);
 
   const navigationControls = {
-    right: 10,
-    top: 10,
+    right: 30,
+    top: 30,
   };
 
   return (
     <ReactMapGL
       {...viewport}
+      width="100%"
+      height="50vh"
       mapboxApiAccessToken={mapboxApiKey}
       mapStyle="mapbox://styles/nictordan/ckryyeqgzgcl817mbs5hil5se"
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
@@ -95,6 +96,7 @@ const Map = () => {
           onClose={() => {
             setSelectedPin(null);
           }}
+          closeOnClick={false}
         >
           <div>
             <p>

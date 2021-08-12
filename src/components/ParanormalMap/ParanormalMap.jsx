@@ -7,24 +7,28 @@ import CreatePinForm from '../CreatePin/CreatePinForm';
 import MapSetup from './MapSetup';
 
 const ParanormalMap = () => {
-    const [openForm, setOpenForm] = useState(false)
+  const [openForm, setOpenForm] = useState(false);
 
   const handleFormButton = () => {
     if (openForm === false) {
-      setOpenForm(true)
+      setOpenForm(true);
     } else {
-      setOpenForm(false)
+      setOpenForm(false);
     }
-  }
+  };
 
   const renderForm = () => {
     if (openForm === false) {
-      return <Button
-        variant="contained"
-        color="primary"
-        onClick={handleFormButton}
-        style={{marginBottom:50}}
-      >Post a pin</Button>
+      return (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleFormButton}
+          style={{ marginBottom: 50 }}
+        >
+          Post a pin
+        </Button>
+      );
     } else {
       return (
         <div className="map-container">
@@ -33,19 +37,23 @@ const ParanormalMap = () => {
             variant="contained"
             color="primary"
             onClick={handleFormButton}
-          >Back</Button>
+          >
+            Back
+          </Button>
         </div>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Grid item xs={11}>
       <Paper style={{ width: '100%' }}>
         <div className="map-container">
-          <Typography className="paranormal-map-heading" variant="h5">Paranormal Activities</Typography>
+          <Typography className="paranormal-map-heading" variant="h5">
+            Paranormal Activities
+          </Typography>
           {renderForm()}
-          <MapSetup className="map" />
+          <MapSetup />
         </div>
       </Paper>
     </Grid>
