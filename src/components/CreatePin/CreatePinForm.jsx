@@ -59,7 +59,7 @@ const CreatePinForm = () => {
         <br />
 
         <TextField
-          type="text"
+          type="textarea"
           name="description"
           id="description"
           className="textfield"

@@ -21,7 +21,7 @@
 }
 
 .popup {
-  width: 25%;
+  max-width: 50%;
   height: 60px;
   line-height: 1.5;
   cursor: pointer;
