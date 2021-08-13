@@ -59,7 +59,7 @@ const CreatePinForm = () => {
         <br />
 
         <TextField
-          type="textarea"
+          type="text"
           name="description"
           id="description"
           className="textfield"
@@ -68,6 +68,7 @@ const CreatePinForm = () => {
           color="primary"
           value={pin.description}
           onChange={handleChange}
+          inputProps={{ maxLength: 150 }}
         />
         <br />
 
