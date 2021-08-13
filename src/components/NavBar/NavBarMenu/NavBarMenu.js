@@ -19,6 +19,7 @@ export default function NavBarMenu() {
   return (
     <div>
       <IconButton
+        style={{ color: 'white' }}
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}

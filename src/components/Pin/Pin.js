@@ -7,14 +7,13 @@ import { BrowserRouter as Switch, Route, useParams } from 'react-router-dom';
 import Note from '../Note/Note';
 import api from '../../api/api';
 
-
 import './Pin.css';
 import { Paper, Typography, Button, TextField, Grid } from '@material-ui/core';
 
 const NotesList = (props) => {
-  let { id } = useParams()
-  let pinId = id
-  const { userId } = props
+  let { id } = useParams();
+  let pinId = id;
+  const { userId } = props;
   const [noteList, setNoteList] = useState(null);
   const [noteOpen, setNoteOpen] = useState(null);
   const [composeNote, setComposeNote] = useState(false);
@@ -66,7 +65,6 @@ const NotesList = (props) => {
     return () => {
       setNoteList(null);
     };
-
   };
 
   const handleChangeTitle = (e) => {
@@ -85,12 +83,11 @@ const NotesList = (props) => {
           setNoteList(res.data);
         }
       })
-      .catch((err) => console.error(err))
+      .catch((err) => console.error(err));
 
     return () => {
       setNoteList(null);
     };
-
   }, [composeNote, pinId]);
 
   if (noteOpen !== null) {
@@ -106,7 +103,10 @@ const NotesList = (props) => {
   } else if (composeNote) {
     return (
       <Grid container justifyContent="center" xs={11}>
-        <Paper className="pin-container" style={{ width: '100%', marginBottom: 20, padding: 10 }}>
+        <Paper
+          className="pin-container"
+          style={{ width: '100%', marginBottom: 20, padding: 10 }}
+        >
           <form className="noteform" onSubmit={handleSubmit}>
             <TextField
               className="textfield"
@@ -130,8 +130,9 @@ const NotesList = (props) => {
               onChange={handleChangeText}
             />
 
-            <Button type="submit" variant="contained" color="secondary">Submit</Button>
-
+            <Button type="submit" variant="contained" color="secondary">
+              Submit
+            </Button>
           </form>
 
           <Button variant="contained" color="secondary" onClick={backClick}>
@@ -139,8 +140,6 @@ const NotesList = (props) => {
           </Button>
         </Paper>
       </Grid>
-
-
     );
   } else if (noteList !== null && composeNote === false) {
     let listItems = [];
@@ -186,9 +185,7 @@ const NotesList = (props) => {
 };
 
 const Pin = (props) => {
-  const { userId } = props
-
-
+  const { userId } = props;
 
   return (
     <>

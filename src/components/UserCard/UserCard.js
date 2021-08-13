@@ -1,21 +1,14 @@
 import './UserCard.css';
 
-import {
-  Grid,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { Grid, Paper, Typography } from '@material-ui/core';
 
 import api from '../../api/api';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Modal from 'react-modal';
 
-
-
 const UserCard = () => {
   const [userName, setUserName] = useState('');
-
 
   useEffect(() => {
     let token = JSON.parse(localStorage.getItem('token'));
@@ -53,7 +46,7 @@ const UserCard = () => {
             {/* <Typography variant="h5">Welcome, User</Typography> */}
           </div>
         </Paper>
-      </Grid> 
+      </Grid>
     </>
   );
 };

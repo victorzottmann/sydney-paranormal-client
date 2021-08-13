@@ -8,11 +8,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import api from '../../api/api';
 import { Button } from '@material-ui/core';
 
-import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
+import mapboxgl from 'mapbox-gl'; // This is a dependency of react-map-gl even if you didn't explicitly install it
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
-
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const mapboxApiKey = process.env.REACT_APP_MAPBOX_KEY;
 
@@ -20,7 +19,6 @@ const customIcon =
   'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png';
 
 const Map = (props) => {
-
   const mapCoordinates = {
     sydney: {
       longitude: 151.208774,
@@ -111,8 +109,8 @@ const Map = (props) => {
               <strong>{selectedPin.properties.title}</strong>
             </p>
             <p>{selectedPin.properties.description}</p>
-            <Button >
-              <Link to={"/pins/" + selectedPin.properties.id}>Go to notes</Link>
+            <Button>
+              <Link to={'/pins/' + selectedPin.properties.id}>Go to notes</Link>
             </Button>
           </div>
         </Popup>

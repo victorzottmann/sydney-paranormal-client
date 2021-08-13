@@ -38,7 +38,7 @@ const NavBar = () => {
 
   const handleLogOut = () => {
     localStorage.clear();
-    window.location.href = '/'
+    window.location.href = '/';
     setLoggedIn(false);
   };
 
